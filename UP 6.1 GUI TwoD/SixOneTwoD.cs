@@ -13,7 +13,7 @@ namespace UP_6._1_GUI_TwoD
     public partial class SixOneTwoD : Form
     {
         private int N, M, i = 0, j = 0;
-        private double[,] arr;
+        private int[,] arr;
         public SixOneTwoD()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace UP_6._1_GUI_TwoD
                 AnswerBox.Text = "Введено неверное значение в поле M! Введите целое число больше 0!";
                 return;
             }
-            arr = new double[N, M]; 
+            arr = new int[N, M]; 
 
             ArrayTextBox.Enabled = true;
             DescriptionLabel.Text = $"Введите [{i}, {j}] элемент массива -> ";
@@ -44,7 +44,7 @@ namespace UP_6._1_GUI_TwoD
             if (e.KeyCode == Keys.Enter)
             {
                 
-                if (!double.TryParse(ArrayTextBox.Text, out arr[i,j]))
+                if (!int.TryParse(ArrayTextBox.Text, out arr[i,j]))
                 {
                     MessageBox.Show("Введено неверное значение! Введите массив заново!");
                     i = 0; j = 0;
